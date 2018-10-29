@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <None Include="..\SharedFiles\**\*.txt" 
+          LinkBase="TextFiles"
+          CopyToOutputDirectory="PreserveNewest"
+          Visible="false"
+    />
+
+    <!--
+    Non-SDK projects:
+    Link="TextFiles\%(RecursiveDir)%(Filename)%(Extension)"
+    -->
+
+    <!--
+    "None" correlates to the build action.
+    Oterhs are:
+    * Compile
+    * EmbeddedResource
+    * Content
+    -->
+
+    <!--
+    Visible="false" hides the items in Solution Explorer
+    -->
+  </ItemGroup>
+
+  <Target Name="BackupProgram" AfterTargets="AfterBuild" Inputs="$(TargetPath)" Outputs="$(TargetPath).bak">
+    <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(TargetPath).bak" />
+    <!--
+    Instead of Inputs/Outputs, you could also set SkipUnchangedFiles="true" on the <Copy> task
+    -->
+  </Target>
+
+</Project>

@@ -1,0 +1,13 @@
+<Project>
+
+  <PropertyGroup>
+    <Version>1.2.3</Version>
+    <Authors>.NET Fest</Authors>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <BaseOutputPath>artifacts\$(MSBuildProjectname)\</BaseOutputPath>
+    <BaseIntermediateOutputPath>obj\$(MSBuildProjectname)\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+
+</Project>
