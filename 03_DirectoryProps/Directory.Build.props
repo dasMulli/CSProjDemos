@@ -2,12 +2,12 @@
 
   <PropertyGroup>
     <Version>1.2.3</Version>
-    <Authors>.NET Fest</Authors>
+    <Authors>Martin Ullrich</Authors>
   </PropertyGroup>
 
   <PropertyGroup>
-    <BaseOutputPath>artifacts\$(MSBuildProjectname)\</BaseOutputPath>
-    <BaseIntermediateOutputPath>obj\$(MSBuildProjectname)\</BaseIntermediateOutputPath>
+    <BaseOutputPath>$(MSBuildThisFileDirectory)artifacts\$(MSBuildProjectname)\</BaseOutputPath>
+    <BaseIntermediateOutputPath>$(MSBuildThisFileDirectory)obj\$(MSBuildProjectname)\</BaseIntermediateOutputPath>
   </PropertyGroup>
 
 </Project>
