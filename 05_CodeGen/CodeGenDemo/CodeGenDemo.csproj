@@ -13,6 +13,9 @@
     Intellisense shows changes to the .ini file instantly
      -->
     <None Update="@(VarsFile)" Generator="MSBuild:GenerateVarsFileCode" />
+    
+    <!-- Make sure that VS builds the project whenever the input file is changed -->
+    <UptoDateCheckInput Include="@(VarsFile)" />
   </ItemGroup>
 
   <Target Name="DetermineGeneratedVarsFileOutputPath">
@@ -91,3 +94,4 @@
   </Target>
 
 </Project>
+
